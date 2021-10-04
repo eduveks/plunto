@@ -12,7 +12,7 @@ import "./index.less";
 
 export default ({})=> {
     const room = {
-        uid: '7066757f-358c-4d72-a62f-348f7d2f8099'
+        uid: '0fb28b35-3a19-4e4e-b257-c09af64d5625'
     };
     const [connected, setConnected] = useState(false);
     const [closed, setClosed] = useState(false);
