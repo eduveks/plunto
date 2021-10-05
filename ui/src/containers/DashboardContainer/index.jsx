@@ -1,32 +1,31 @@
 import React, { Component } from "react";
 
+import Tabs from 'antd/lib/tabs';
+
+import PoolContainer from "../PoolContainer/index.jsx";
 import ChatContainer from "../ChatContainer/index.jsx";
 
 import "./index.less";
 
+const { TabPane } = Tabs;
+
 export default class DashboardContainer extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            counter: 0
-        };
-        this.button = React.createRef();
-        this.click = this.click.bind(this);
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        $(this.button.current).fadeOut(250).fadeIn(250);
-    }
-
-    click() {
-        this.setState({ counter: this.state.counter + 1 });
+        this.state = { };
     }
 
     render() {
-        const { counter } = this.state;
         return (
             <div className="my-dashboard">
-                <ChatContainer />
+              <Tabs defaultActiveKey="1">
+                <TabPane tab="Pool" key="1">
+                  <PoolContainer />
+                </TabPane>
+                <TabPane tab="Chat" key="2">
+                  <ChatContainer />
+                </TabPane>
+              </Tabs>
             </div>
         );
     }

@@ -1,0 +1,8 @@
+{
+    "websocket": {
+        "endpoint": "ws://eduardo-velasques.dev.netuno.org:10090/ws/room/"
+    },
+    "api": {
+        "endpoint": "http://eduardo-velasques.dev.netuno.org:10090/services"
+    }
+}
