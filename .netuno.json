@@ -1,0 +1,99 @@
+{
+    "name": "plunto",
+    "description": "Moderated and multi-room web chat.",
+    "type": "app",
+    "config": {
+        "development": {
+            "setup": {
+                "schema": {
+                    "execution": true,
+                    "auto_create": true
+                },
+                "scripts": {"execution": true},
+                "enabled": true
+            },
+            "language": "en_GB",
+            "locale": "en_GB",
+            "commands": [
+                {
+                    "path": "ui",
+                    "command": "npm run watch",
+                    "enabled": true
+                },
+                {
+                    "path": "website",
+                    "command": "npm start",
+                    "enabled": true
+                }
+            ],
+            "ws": {
+                "endpoints": [
+                    {
+                        "name": "pool",
+                        "enabled": true,
+                        "sendTimeout": 10000,
+                        "idleTimeout": 0,
+                        "public": "/ws/pool/rcA5Qt4pnBWQhfjCuZr8pysZ",
+                        "path": "/",
+                        "service": "/services/ws/pool"
+                    },
+                    {
+                        "name": "room",
+                        "enabled": true,
+                        "sendTimeout": 10000,
+                        "idleTimeout": 0,
+                        "public": "/ws/room/",
+                        "path": "/{room-uid}/{participant-uid}",
+                        "service": "/services/ws/room"
+                    }
+                ]
+            },
+            "db": {
+                "default": {
+                    "password": "",
+                    "engine": "h2",
+                    "port": "",
+                    "host": "",
+                    "name": "plunto",
+                    "username": ""
+                }
+            }
+        }
+        "production": {
+            "setup": {
+                "schema": {
+                    "execution": true,
+                    "auto_create": true
+                },
+                "scripts": {"execution": true},
+                "enabled": true
+            },
+            "language": "en_GB",
+            "locale": "en_GB",
+            "commands": [ ],
+            "ws": {
+                "endpoints": [
+                    {
+                        "name": "room",
+                        "enabled": true,
+                        "sendTimeout": 10000,
+                        "idleTimeout": 0,
+                        "public": "/ws/room/",
+                        "path": "/{uid}",
+                        "service": "/services/ws/room"
+                    }
+                ]
+            },
+            "db": {
+                "default": {
+                    "password": "",
+                    "engine": "h2",
+                    "port": "",
+                    "host": "",
+                    "name": "plunto",
+                    "username": ""
+                }
+            }
+        }
+    }
+}

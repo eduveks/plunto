@@ -1,5 +1,7 @@
 
-const dbRoom = _db.get('room', _req.getValues('room', _val.map()).getString('uid'))
+const dbRoom = _db.get('room', _ws.path().getString('room-uid'))
+
+const dbParticipant = _db.get('participant', _ws.path().getString('participant-uid'))
 
 const content = _req.getValues('message', _val.map()).getString('content')
 
@@ -21,6 +23,7 @@ _ws.broadcastAsService(
             'content',
             _val.map()
                 .set('uid', dbMessage.getString('uid'))
+                .set('name', dbParticipant.getString('name'))
                 .set('content', dbMessage.getString('content'))
         )
 )

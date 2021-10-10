@@ -7,3 +7,8 @@
   *
   */
 
+const dbParticipant = _db.get('participant', _ws.path().getString("participant-uid"))
+
+if (dbParticipant == null) {
+    _ws.close()
+}

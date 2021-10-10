@@ -23,17 +23,17 @@ And set the configurations inside of the Plunto app folder:
 cd netuno/apps/plunto
 ```
 
-Copy from base configuration and edit to make your the adjustments:
+Copy from base configuration and edit to make your own adjustments:
 
 ```
 cp config/sample.json config/_development.json
 ```
 
-Now just need to start the Netuno server with Plunto Web Chat as the main application:
+Now just need to start the Netuno Server, but with the Plunto Web Chat as the main application:
 
 `./netuno server app=plunto`
 
-> At the first time, will execute the NPM installs automatically.
+> At the first time, may execute the NPM installs automatically.
 
 ### Local Links
 

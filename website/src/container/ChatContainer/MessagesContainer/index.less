@@ -1,0 +1,19 @@
+
+.chat__messages {
+    height: calc(100% - 250px);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    > div {
+        margin: 20px 10px 20px 0;
+        border-bottom: 1px solid #ffffff;
+        > div:first-child {
+            font-size: 12px;
+            font-weight: bold;
+        }
+        > div:last-child {
+            font-size: 12px;
+            text-align: right;
+            font-style: italic;
+        }
+    }
+}

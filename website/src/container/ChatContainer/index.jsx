@@ -12,12 +12,12 @@ import "./index.less";
 
 const { Title } = Typography;
 
-export default ({room})=> {
+export default ({room, participant, collapsed})=> {
     const [connected, setConnected] = useState(false);
     const [closed, setClosed] = useState(false);
     useEffect(()=> {
         _ws.config({
-            url: `${config.websocket.endpoint}${room.uid}`,
+            url: `${config.websocket.endpoint}${room.uid}/${participant.uid}`,
             servicesPrefix: '/services',
             connect: (event) => {
                 setConnected(true);
@@ -47,7 +47,7 @@ export default ({room})=> {
         );
     }
     return (
-        <div>
+        <div className={ `chat ${collapsed ? 'chat--collapsed' : ''}` }>
           <Title level={3}  style={{textAlign: 'center'}}>{room.name}</Title>
           <MessagesContainer room={room}/>
           <SendContainer room={room}/>
