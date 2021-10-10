@@ -58,7 +58,7 @@
                     "username": ""
                 }
             }
-        }
+        },
         "production": {
             "setup": {
                 "schema": {
