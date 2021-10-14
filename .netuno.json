@@ -57,7 +57,13 @@
                     "name": "plunto",
                     "username": ""
                 }
-            }
+            },
+            "cors": [
+                {
+                    "enabled": true,
+                    "origins": [ "*" ]
+                }
+            ]
         },
         "production": {
             "setup": {
@@ -93,7 +99,13 @@
                     "name": "plunto",
                     "username": ""
                 }
-            }
+            },
+            "cors": [
+                {
+                    "enabled": true,
+                    "origins": [ "*" ]
+                }
+            ]
         }
     }
 }
