@@ -22,7 +22,9 @@ In your terminal, execute the command below into the Netuno root folder to insta
 
 Then start the Netuno with the Pluto application:
 
-`./netuno server app=plunto`
+```
+./netuno server app=plunto
+```
 
 > At first time will take some time because of the auto-execution of the NPM installs.
 
@@ -49,7 +51,9 @@ cp config/sample.json config/_development.json
 
 Now just need to start the Netuno Server, but with the Plunto Web Chat as the main application:
 
-`./netuno server app=plunto`
+```
+./netuno server app=plunto
+```
 
 > At the first time, may execute the NPM installs automatically.
 
