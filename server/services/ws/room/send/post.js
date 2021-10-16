@@ -27,3 +27,33 @@ _ws.broadcastAsService(
                 .set('content', dbMessage.getString('content'))
         )
 )
+
+_ws.broadcastAsService(
+    'pool',
+    '/',
+    _val.map()
+        .set("service", "/pool/list")
+        .set(
+            'content',
+            _val.map()
+                .set(
+                    'room', 
+                    _val.map()
+                        .set('uid', dbRoom.getString('uid'))
+                        .set('name', dbRoom.getString('name'))
+                )
+                .set(
+                    'participant', 
+                    _val.map()
+                        .set('uid', dbParticipant.getString('uid'))
+                        .set('name', dbParticipant.getString('name'))
+                )
+                .set(
+                    'message', 
+                    _val.map()
+                        .set('uid', dbMessage.getString('uid'))
+                        .set('content', dbMessage.getString('content'))
+                )
+        )
+)
+

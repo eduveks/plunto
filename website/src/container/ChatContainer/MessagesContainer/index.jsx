@@ -24,6 +24,7 @@ export default ({})=> {
                         }
                     }
                 } else {
+                    content.time = moment().format('HH:mm:ss');
                     messages.push(content);
                 }
                 console.log({
@@ -53,7 +54,7 @@ export default ({})=> {
                   <div key={message.uid}>
                     <div>{message.name}</div>
                     {message.content}
-                    <div>{moment().format('HH:mm:ss')}</div>
+                    <div>{message.time}</div>
                   </div>
               );
           })}

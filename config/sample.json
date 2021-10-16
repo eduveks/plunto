@@ -1,8 +1,9 @@
 {
-    "cron": {"jobs": []},
     "settings": {"public": {}},
-    "smtp": {},
-    "name": "plunto",
+    "cors": [{
+        "origins": ["*"],
+        "enabled": true
+    }],
     "setup": {
         "schema": {
             "execution": true,
@@ -12,32 +13,39 @@
         "enabled": true
     },
     "language": "en_GB",
-    "firebase": {
-        "app_name": "",
-        "database_url": "",
-        "key_file": "",
-        "listener_secret": ""
-    },
     "locale": "en_GB",
-    "remote": {},
-    "commands": [{
-        "path": "ui",
-        "command": "npm run watch",
-        "enabled": true
-    }],
-    "ws": {
-        "endpoints": [
-            {
-                "name": "room",
-                "enabled": true,
-                "sendTimeout": 10000,
-                "idleTimeout": 0,
-                "public": "/ws/room/",
-                "path": "/{uid}",
-                "service": "/services/ws/room"
-            }
-        ]
-    },
+    "ws": {"endpoints": [
+        {
+            "path": "/",
+            "sendTimeout": 10000,
+            "public": "/ws/pool/rcA5Qt4pnBWQhfjCuZr8pysZ",
+            "service": "/services/ws/pool",
+            "idleTimeout": 0,
+            "name": "pool",
+            "enabled": true
+        },
+        {
+            "path": "/{room-uid}/{participant-uid}",
+            "sendTimeout": 10000,
+            "public": "/ws/room/",
+            "service": "/services/ws/room",
+            "idleTimeout": 0,
+            "name": "room",
+            "enabled": true
+        }
+    ]},
+    "commands": [
+        {
+            "path": "ui",
+            "command": "npm run watch",
+            "enabled": true
+        },
+        {
+            "path": "website",
+            "command": "npm start",
+            "enabled": true
+        }
+    ],
     "db": {"default": {
         "password": "",
         "engine": "h2",

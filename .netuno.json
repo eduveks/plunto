@@ -35,8 +35,8 @@
                         "sendTimeout": 10000,
                         "idleTimeout": 0,
                         "public": "/ws/pool/rcA5Qt4pnBWQhfjCuZr8pysZ",
-                        "path": "/",
-                        "service": "/services/ws/pool"
+                        "service": "/services/ws/pool",
+                        "path": "/"
                     },
                     {
                         "name": "room",
@@ -82,12 +82,21 @@
             "ws": {
                 "endpoints": [
                     {
+                        "name": "pool",
+                        "enabled": true,
+                        "sendTimeout": 10000,
+                        "idleTimeout": 0,
+                        "public": "/ws/pool/rcA5Qt4pnBWQhfjCuZr8pysZ",
+                        "service": "/services/ws/pool",
+                        "path": "/"
+                    },
+                    {
                         "name": "room",
                         "enabled": true,
                         "sendTimeout": 10000,
                         "idleTimeout": 0,
                         "public": "/ws/room/",
-                        "path": "/{uid}",
+                        "path": "/{room-uid}/{participant-uid}",
                         "service": "/services/ws/room"
                     }
                 ]

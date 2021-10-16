@@ -13,3 +13,17 @@ _ws.broadcastAsService(
                 .set('uid', _dataItem.uid)
         )
 )
+
+_ws.broadcastAsService(
+    'pool',
+    `/`,
+    _val.map()
+        .set('method', 'DELETE')
+        .set("service", "/pool/list")
+        .set(
+            'content',
+            _val.map()
+                .set('uid', _dataItem.uid)
+        )
+)
+
