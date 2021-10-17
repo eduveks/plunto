@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Layout, Menu, Breadcrumb, Typography, Button, Spin } from 'antd';
 
-import { MenuUnfoldOutlined, MenuFoldOutlined, GithubOutlined, WechatOutlined } from '@ant-design/icons';
+import { MenuUnfoldOutlined, MenuFoldOutlined, GithubOutlined, WechatOutlined, UserOutlined } from '@ant-design/icons';
 
 import _service from '@netuno/service-client';
 
@@ -61,6 +61,7 @@ export default ({})=> {
               }}
             >
               <div className="logo"><img src={logo}/></div>
+              <div className="participant">{participant && <><UserOutlined /> {participant.name}</>}</div>
               <Button type="primary" onClick={()=> setCollapsed(!collapsed) } style={{ marginBottom: 16, marginTop: 20 }}>
                 {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
               </Button>
@@ -84,6 +85,7 @@ export default ({})=> {
             { collapsed &&
               <Header style={{padding: '0 10px'}}>
                 <div className="logo"><img src={logo}/></div>
+                <div className="participant">{participant && <><UserOutlined /> {participant.name}</>}</div>
                 <Button type="primary" className="menu-toggle" onClick={()=> setCollapsed(!collapsed) } style={{ marginBottom: 16 }}>
                   {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
                 </Button>
