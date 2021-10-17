@@ -4,7 +4,9 @@
 
 Moderated and multi-room web chat.
 
-[![Demo Video](https://img.youtube.com/vi/vNsiDW71GX0/0.jpg)](https://www.youtube.com/watch?v=vNsiDW71GX0)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=vNsiDW71GX0"><img src="https://raw.githubusercontent.com/eduveks/plunto/main/docs/demo.gif" alt="Plunto Demo"></a>
+</div>
 
 ## Installation
 
