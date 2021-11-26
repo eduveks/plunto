@@ -20,7 +20,7 @@ The requirements and the server, easy-peasy:
 In your terminal, execute the command below into the Netuno root folder to install and autoconfigure the application:
 
 ```
-./netuno app github=eduveks/pluto
+./netuno app github=eduveks/plunto
 ```
 
 > This requires GIT command.
